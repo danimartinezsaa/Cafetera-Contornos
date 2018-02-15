@@ -47,8 +47,7 @@ public class Producto{
     public void setNombre(String nombre){
         this.nombre=nombre;
     }
-    
-    
+
     @Override
     public String toString(){
         return "Precio="+Precio+", nombre="+nombre;

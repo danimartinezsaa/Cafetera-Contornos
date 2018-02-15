@@ -8,12 +8,12 @@ package contornoscafetera;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Programa de una cafetera con las opciones de seleccionar bebida, introducir dinero, devolver dinero, añadir azúcar, quitar azúcar y salir.
  * @author dani
  */
 public class ContornosCafetera{
 
-    /**
+    /** Clase principal con el menú principal de una cafetera.
      * @param args the command line arguments
      */
     public static void main(String[] args){

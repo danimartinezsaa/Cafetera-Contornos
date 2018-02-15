@@ -1,18 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package contornoscafetera;
 
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Botonera de la máquina de café, dónde se gestionan los botones de selección de las bebidas, devolver dinero y dar o quitar azúcar.
  * @author dani
  */
 public class Botonera{
-
+/**
+ * Menú para que el usuario seleccione la bebida que desee
+ * @return Retorna un entero que corresponde a la posición del producto en el Array "lista_producto" de la clase Main
+ */
     public static int seleccionBebida(){
         String[] bebidas={"Café", "Chocolate", "Té"};
         int bebida=JOptionPane.showOptionDialog(
@@ -34,7 +33,10 @@ public class Botonera{
         );
         return bebida;
     }
-
+/**
+ * Realiza la acción del botón de devolver dinero, poniendo la cuenta de la clase "Dinero" a 0 si no lo está ya y muestra un mensaje dependiendo de la condición.
+ * @return True
+ */
     public static boolean devolverDinero(){
         if(Dinero.cuenta>0){
             Dinero.cuenta=0f;
@@ -45,13 +47,20 @@ public class Botonera{
         }
         return true;
     }
-    
+/**
+ * Incrementa azucar de la clase Producto
+ * @return True 
+ */    
     public static boolean masAzucar(){
         if(Producto.getAzucar()>=0 && Producto.getAzucar()<5)
             Producto.setAzucar(Producto.getAzucar()+1);
         
         return true;
     }
+/**
+ * Decrementa azucar de la clase Producto
+ * @return True
+ */
     public static boolean menosAzucar(){
         if(Producto.getAzucar()<=5 && Producto.getAzucar()>0)
             Producto.setAzucar(Producto.getAzucar()-1);
