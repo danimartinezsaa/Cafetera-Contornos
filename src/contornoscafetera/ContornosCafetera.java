@@ -43,19 +43,16 @@ public class ContornosCafetera{
             
             switch(opcion){
                 case 0:
-                    if(seleccionado==null){
-                        Dinero.contar();
-                        Display.mostrarDinero();
-                    } else{
+                    if(seleccionado!=null)
                         Display.pedirDinero(seleccionado);
-                        Dinero.contar();
-                        Display.mostrarDinero();
-                    }
+                    
+                    Dinero.contar();
+                    Display.mostrarDinero();
                     break;
                 case 1:
                     seleccionado=lista_producto[Botonera.seleccionBebida()];
+                    Display.mensajeSeleccion(seleccionado);
                     if(Dinero.cuenta>=seleccionado.getPrecio()){
-                        Display.mensajeSeleccion(seleccionado);
                         Cafetera.darVaso();
                         if(seleccionado.getNombre().equals("Café")){
                             Cafetera.DispensarCafe();
@@ -70,7 +67,6 @@ public class ContornosCafetera{
                         Dinero.darVuelta(seleccionado);
                         seleccionado=null;
                     }else{
-                        Display.mensajeSeleccion(seleccionado);
                         Display.pedirDinero(seleccionado);
                     }
                     break;
